@@ -1,7 +1,7 @@
 using System;
 
-//d‰İ‘g‚İ‡‚í‚¹id•¡‚ ‚èj
-//“ü—Í‚Í®”ˆê‚Â
+//ç¡¬è²¨çµ„ã¿åˆã‚ã›ï¼ˆé‡è¤‡ã‚ã‚Šï¼‰
+//å…¥åŠ›ã¯æ•´æ•°ä¸€ã¤
 public class Test
 {
 	static int[]coin=new int[]{1,5,10,50,100,500};
@@ -15,35 +15,35 @@ public class Test
 		a=coin.Length;
 		line=Console.ReadLine();
 		b=int.Parse(line);
-		//	‘g‚İ‡‚í‚¹ŠÖ”‚ğŒÄ‚Ño‚µ‚Äcnt‚É‘ã“ü
+		//	çµ„ã¿åˆã‚ã›é–¢æ•°ã‚’å‘¼ã³å‡ºã—ã¦cntã«ä»£å…¥
 		cnt=combination(b, a - 1);
-		//	‘g‚İ‡‚í‚¹ŒÂ”‚ğ•\¦
+		//	çµ„ã¿åˆã‚ã›å€‹æ•°ã‚’è¡¨ç¤º
 		Console.WriteLine(cnt);
 		
 	}
 	static int combination(int rest, int uidx)
 	{
-		//cnt‚Í‘g‚İ‡‚í‚¹ŒÂ”
+		//cntã¯çµ„ã¿åˆã‚ã›å€‹æ•°
 		int i, cnt;
 		
-		//c‹à‚ª0‚È‚ç‚È
+		//æ®‹é‡‘ãŒ0ãªã‚‰ãª
 		if(rest == 0)
 		{
-			//c‹à‚ª0‚È‚Ì‚Å1‚ğ•Ô‚·
+			//æ®‹é‡‘ãŒ0ãªã®ã§1ã‚’è¿”ã™
 			return 1;
 		}
 		else
 		{
 			cnt = 0;
 			for(i = uidx;i >= 0;i--){
-				//coin‚Ìd‰İ‚æ‚è‘å‚«‚¢‚©H
+				//coinã®ç¡¬è²¨ã‚ˆã‚Šå¤§ãã„ã‹ï¼Ÿ
 				if(rest >= coin[i])
 				{
-					//c‹à‚ğˆø‚¢‚ÄÄ‹A‚³‚¹‚é
+					//æ®‹é‡‘ã‚’å¼•ã„ã¦å†å¸°ã•ã›ã‚‹
 					cnt += combination(rest-coin[i],i);
 				}
 			}
-			//¡‚Ü‚Å‚Ì‘g‚İ‡‚í‚¹ŒÂ”‚ğ•Ô‚·
+			//ä»Šã¾ã§ã®çµ„ã¿åˆã‚ã›å€‹æ•°ã‚’è¿”ã™
 			return cnt;
 		}
 	}
